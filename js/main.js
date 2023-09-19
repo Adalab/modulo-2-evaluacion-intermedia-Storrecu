@@ -7,6 +7,8 @@ const result = document.querySelector('.js-msg');
 const playerCount = document.querySelector('.js-player-count');
 const cpuCount = document.querySelector('.js-cpu-count');
 let resultMessage = '';
+let playerScore = 0;
+let cpuScore = 0;
 
 //Función para que la CPU haga una jugada aleatoria:
 function getRandomNumber(max) {
@@ -46,15 +48,18 @@ function compareMovements() {
 
 //Función para actualizar contador del jugador y de la CPU y que no se pongan números negativos:
 const countGame = () => {
+  playerCount.innerHTML = playerScore;
+  cpuCount.innerHTML = cpuScore;
+
   if (resultMessage === '¡Has ganado!') {
-    playerCount.innerHTML++;
-    if (cpuCount.innerHTML > 0) {
-      cpuCount.innerHTML--;
+    playerScore++;
+    if (cpuScore > 0) {
+      cpuScore--;
     }
   } else if (resultMessage === '¡Has perdido!') {
-    cpuCount.innerHTML++;
-    if (playerCount.innerHTML > 0) {
-      playerCount.innerHTML--;
+    cpuScore++;
+    if (playerScore > 0) {
+      playerScore--;
     }
   }
 };
