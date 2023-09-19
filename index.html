@@ -14,16 +14,16 @@
     <section>
       <h1>Juego Piedra, Papel y Tijera</h1>
       <h2>Introduce aquí tu jugada:</h2>
-      <select name="Seleccion">
+      <select class="js-input-select" name="Seleccion">
         <option value="" disabled selected>Seleccione su jugada</option>
         <option value="Piedra">Piedra</option>
         <option value="Papel">Papel</option>
-        <option value="Tijeras">Tijeras</option>
+        <option value="Tijeras">Tijera</option>
       </select>
-      <button>Jugar</button>
-      <p>Vamos a jugar!</p>
-      <p>Jugador: <span></span></p>
-      <p>Computadora: <span></span></p>
+      <button class="js-btn">Jugar</button>
+      <p class="js-msg">Vamos a jugar!</p>
+      <p>Jugador: <span class="js-player-count"></span></p>
+      <p>Computadora: <span class="js-cpu-count"></span></p>
     </section>
   </main>
   <script src="./js/main.js"></script>
