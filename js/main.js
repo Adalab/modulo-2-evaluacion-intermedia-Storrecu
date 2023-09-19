@@ -9,6 +9,7 @@ const cpuCount = document.querySelector('.js-cpu-count');
 let resultMessage = '';
 let playerScore = 0;
 let cpuScore = 0;
+let Movements = 0;
 
 //Función para que la CPU haga una jugada aleatoria:
 function getRandomNumber(max) {
@@ -66,11 +67,10 @@ const countGame = () => {
 
 //Función para actualizar los movimientos del juego:
 const finalMovements = () => {
-  let Movements = 0;
-
   if (Movements >= 10) {
     result.innerHTML = '¡El juego ha terminado!';
-    Movements++;
+    btnPlay.disabled = true;
+    return;
   }
 };
 
@@ -79,6 +79,7 @@ const handleClick = () => {
   compareMovements();
   countGame();
   finalMovements();
+  Movements++;
 };
 
 //Eventos:
